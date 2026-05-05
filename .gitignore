@@ -1,19 +1,19 @@
-# Java / Spring Boot
+Java / Spring Boot
 target/
 *.log
 *.class
 
-# Node / React
+ Node / React
 node_modules/
 build/
 
-# OS files
+ OS files
 .DS_Store
 Thumbs.db
 
-# IDE files
+ IDE files
 .vscode/
 .idea/
 
-# Env files
+ Env files
 .env
