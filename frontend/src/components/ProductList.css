@@ -1,0 +1,8 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  gap: 35px;              /* SPACE BETWEEN BOXES */
+  justify-content: center;
+  padding: 20px;
+
+}
