@@ -8,7 +8,10 @@ function ProductList({ addToCart, buyProduct }) {
   useEffect(() => {
     fetch("http://localhost:8080/api/products")
       .then(res => res.json())
-      .then(data => setProducts(data));
+      .then(data => {
+        console.log("API Response:", data);
+        setProducts(data);
+      });
   }, []);
 
   return (
