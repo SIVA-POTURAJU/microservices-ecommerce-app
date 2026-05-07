@@ -1,58 +1,228 @@
+.card {
+  background: white;
+  border-radius: 12px;
+
+  padding: 15px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+
+  text-align: center;
+}
 
 .card {
-  background-color:white;
-  width: 200px;
-  height: 220px;
-  border-radius: 10px;
-  padding: 10px;
+  position: relative;
+
+  background: white;
+  border-radius: 12px;
+
+  padding: 15px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+  transition: 0.4s;
+
   text-align: center;
-  text-color:white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+  overflow: hidden;
 }
+
+/* RGB Border Effect */
+
+.card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -2px;
+  left: -2px;
+
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+
+  background-size: 400%;
+
+  border-radius: 14px;
+
+  z-index: -1;
+
+  opacity: 0;
+
+  transition: 0.4s;
+
+  animation: rgbGlow 8s linear infinite;
+}
+
+/* Hover */
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* RGB Animation */
+
+@keyframes rgbGlow {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 300% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+
+}
+
+.product-image {
+  height: 180px;
+  background: #e2e8f0;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+}
+
+/* Product Image Area */
+
+.product-image {
+
+  height: 180px;
+
+  background: #d1d5db;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+/* Flicker Scrolling Text */
+
+.scroll-text {
+
+  white-space: nowrap;
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  color: black;
+
+  animation:
+    scrollText 8s linear infinite,
+    flicker 1s infinite;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+/* Scroll Animation */
+
+@keyframes scrollText {
+
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+
+/* Flicker Animation */
+
+@keyframes flicker {
+
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
 .card h4 {
-  color: black;   /* product name */
+  margin: 10px 0;
+  color: #1e293b;
 }
 
 .card p {
-  color: black;   /* price */
+  font-size: 18px;
+  font-weight: bold;
+  color: #2563eb;
 }
 
-/* Button container spacing */
-.card div {
-  display: flex;
-  justify-content: center;
-  gap: 10px; /* SPACE BETWEEN BUTTONS */
+/* Buttons */
+
+.btn-group {
+  margin-top: 15px;
 }
 
-/* Common button style */
-.card button {
-  padding: 6px 10px;
+.btn-group button {
+  padding: 8px 14px;
+  margin: 5px;
+
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+
   cursor: pointer;
-  transition: 0.2s;
 }
-.card button {
-  width: 80px;
-}
-/* Add button */
+
 .add-btn {
-  background-color: #3498db;
+  background: #2563eb;
   color: white;
 }
 
-.add-btn:hover {
-  background-color: #2980b9; /* darker on hover */
-}
-
-/* Buy button */
 .buy-btn {
-  background-color: #2ecc71;
+  background: #16a34a;
   color: white;
-}
-
-.buy-btn:hover {
-  background-color: #27ae60; /* darker on hover */
 }

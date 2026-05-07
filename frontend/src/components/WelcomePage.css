@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.welcome-container {
+  min-height: 100vh;
+
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #111827
+  );
+
+  color: white;
+}
+
+/* Navbar */
+
+.navbar {
+  height: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 60px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 3px;
+
+  color: #facc15;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links span {
+  margin-left: 30px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition: 0.3s;
+}
+
+.nav-links span:hover {
+  color: #facc15;
+}
+
+.nav-links span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #facc15;
+
+  transition: 0.3s;
+}
+
+.nav-links span:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+
+.hero-section {
+  height: calc(100vh - 80px);
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 80px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 80px;
+  line-height: 95px;
+
+  font-weight: bold;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 20px;
+
+  transition: 0.3s;
+}
+
+.hero-content h1:hover {
+  color: #facc15;
+}
+
+.hero-content p {
+  font-size: 18px;
+
+  color: #cbd5e1;
+
+  margin-bottom: 30px;
+
+  line-height: 30px;
+}
+
+.hero-content button {
+  padding: 14px 30px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #facc15;
+
+  color: black;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  transform: translateY(-5px);
+
+  background: white;
+
+  box-shadow: 0 8px 20px rgba(250, 204, 21, 0.4);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-section {
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+}
